@@ -12,7 +12,7 @@ const timec = document.getElementById("timec");
 const checkc = document.getElementById("checkc");
 const timet = document.getElementById("timet");
 const checkt = document.getElementById("checkt");
-
+const chaveirotaudio = document.getElementById("chaveirot_audio");
 
 const myWorker = new Worker("./worker.js");
 reaperaudio.src = "https://www.myinstants.com/media/sounds/ussr1.mp3";
