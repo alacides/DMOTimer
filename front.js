@@ -59,7 +59,7 @@ myWorker.onmessage = (e) => {
         console.log(e.msg);
         if(e.msg == "0m 0s"){
 
-            chaveiroaudio.play();
+            chaveirotaudio.play();
         }
     }
 
