@@ -17,6 +17,7 @@ minatoaudio.src = "https://www.myinstants.com/media/sounds/money-button.mp3";
 minatoaudio.load();
 
 myWorker.onmessage = (e) => {
+    e = e.data
     if(e.Run == "DReaper"){
         document.getElementById("DReaper").innerHTML = e.msg
     }
