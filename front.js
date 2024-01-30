@@ -1,14 +1,19 @@
 // Initialize alarm sound
 
 
-const timeoutAudio = document.getElementById("alarm_audio");
+const minatoaudio = document.getElementById("minato_audio");
+const reaperaudio = document.getElementById("reaper_audio");
 const checkminato = document.getElementById("checkm");
 const checkdreaper = document.getElementById("checkd");
 const timem = document.getElementById("timem");
 const timed = document.getElementById("timed");
 
-timeoutAudio.src = "https://www.myinstants.com/media/sounds/ussr1.mp3";
-timeoutAudio.load();
+reaperaudio.src = "https://www.myinstants.com/media/sounds/ussr1.mp3";
+reaperaudio.load();
+
+minatoaudio.src = "https://www.myinstants.com/media/sounds/money-button.mp3";
+minatoaudio.load();
+
 
 checkminato.onclick = () => {
         document.getElementById("dtimem").style.display = 'none'
@@ -36,7 +41,7 @@ function timerdreaper(){
             minutes = minutes-1;
             seconds = 59;
             if(minutes == -1){
-                timeoutAudio.play();
+                reaperaudio.play();
                 minutes = 59;
                 seconds = 59;
             }
@@ -69,7 +74,7 @@ function timerminato(){
             if(minutes == -1){
                 hours = hours - 1
                 if(hours == -1){
-                    timeoutAudio.play();
+                    minatoaudio.play();
                     hours = 1;
                     minutes = 59;
                     seconds = 59;
