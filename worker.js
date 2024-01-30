@@ -21,7 +21,7 @@ onmessage = (e) => {
         else{
             seconds = seconds-1;
         }
-        postMessage({Run:"DReaper",msg:minutes + "m " + seconds + "s "});
+        postMessage({Run:"DReaper",msg:minutes + "m " + seconds + "s"});
       //document.getElementById("DReaper").innerHTML = minutes + "m " + seconds + "s ";
     }, 1000);
     } 
