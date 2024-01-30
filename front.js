@@ -20,6 +20,11 @@ myWorker.onmessage = (e) => {
     e = e.data
     if(e.Run == "DReaper"){
         document.getElementById("DReaper").innerHTML = e.msg
+        console.log(e.msg);
+        if(e.msg == "0m 0s"){
+
+            reaperaudio.play();
+        }
     }
   };
 

@@ -13,7 +13,6 @@ onmessage = (e) => {
             minutes = minutes-1;
             seconds = 59;
             if(minutes == -1){
-                reaperaudio.play();
                 minutes = 59;
                 seconds = 59;
             }
