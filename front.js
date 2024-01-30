@@ -3,10 +3,13 @@
 
 const minatoaudio = document.getElementById("minato_audio");
 const reaperaudio = document.getElementById("reaper_audio");
+const chaveiroaudio = document.getElementById("chaveiro_audio");
 const checkminato = document.getElementById("checkm");
 const checkdreaper = document.getElementById("checkd");
 const timem = document.getElementById("timem");
 const timed = document.getElementById("timed");
+const timec = document.getElementById("timec");
+const checkc = document.getElementById("checkc");
 
 
 const myWorker = new Worker("./worker.js");
@@ -15,6 +18,9 @@ reaperaudio.load();
 
 minatoaudio.src = "https://www.myinstants.com/media/sounds/money-button.mp3";
 minatoaudio.load();
+
+chaveiroaudio.src = "https://www.myinstants.com/media/sounds/tuturu-okarin.mp3"
+chaveiroaudio.load();
 
 myWorker.onmessage = (e) => {
     e = e.data
@@ -34,6 +40,14 @@ myWorker.onmessage = (e) => {
             minatoaudio.play();
         }
     }
+    if(e.Run == "Chaveiro"){
+        document.getElementById("Chaveiro").innerHTML = e.msg
+        console.log(e.msg);
+        if(e.msg == "0m 0s"){
+
+            minatoaudio.play();
+        }
+    }
 
   };
 
@@ -48,6 +62,14 @@ checkdreaper.onclick = () => {
         document.getElementById("dtimed").style.display = 'none'
         document.getElementById("countd").style.display = ''
         myWorker.postMessage({Run:"DReaper",Tempo:timed.value.split("m").join("")});
+
+}
+
+
+checkc.onclick = () => {
+    document.getElementById("dtimec").style.display = 'none'
+    document.getElementById("countc").style.display = ''
+    myWorker.postMessage({Run:"Chaveiro",Tempo:timed.value.split("m").join("")});
 
 }
 
