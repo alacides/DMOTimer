@@ -78,7 +78,7 @@ setInterval(function() {
     else{
         seconds = seconds-1;
     }
-    postMessage({Run:"Chaveiro",msg:minutes + "m " + seconds + "s"});
+    postMessage({Run:"Chaveiro",msg: minutes + "m " + seconds + "s"});
   //document.getElementById("DReaper").innerHTML = minutes + "m " + seconds + "s ";
 }, 1000);
 }

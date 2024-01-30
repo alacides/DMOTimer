@@ -69,7 +69,7 @@ checkdreaper.onclick = () => {
 checkc.onclick = () => {
     document.getElementById("dtimec").style.display = 'none'
     document.getElementById("countc").style.display = ''
-    myWorker.postMessage({Run:"Chaveiro",Tempo:timed.value.split("m").join("")});
+    myWorker.postMessage({Run:"Chaveiro",Tempo:timec.value.split("m").join("")});
 
 }
 
