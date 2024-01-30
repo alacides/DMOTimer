@@ -55,7 +55,7 @@ onmessage = (e) => {
             }
             
           // Output the result in an element with id="demo"
-          postMessage({Run:"DReaper",msg:hours + "h "+ minutes + "m " + seconds + "s"});
+          postMessage({Run:"Minato",msg:hours + "h "+ minutes + "m " + seconds + "s"});
         }, 1000);
 }
 }
