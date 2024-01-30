@@ -8,6 +8,8 @@ const checkdreaper = document.getElementById("checkd");
 const timem = document.getElementById("timem");
 const timed = document.getElementById("timed");
 
+
+const myWorker = new Worker("./worker.js");
 reaperaudio.src = "https://www.myinstants.com/media/sounds/ussr1.mp3";
 reaperaudio.load();
 
@@ -18,42 +20,15 @@ minatoaudio.load();
 checkminato.onclick = () => {
         document.getElementById("dtimem").style.display = 'none'
         document.getElementById("countm").style.display = ''
+        
         timerminato();
 }
 
 checkdreaper.onclick = () => {
         document.getElementById("dtimed").style.display = 'none'
         document.getElementById("countd").style.display = ''
-        timerdreaper();
+        myWorker.postMessage({Run:"DReaper",Tempo:timed.value.split("m").join("")});
 
-}
-    
-function timerdreaper(){
-     
-    vetord = timed.value.split("m").join("")
-    console.log(vetord)
-    let minutes = vetord;
-    let seconds = 1;
-
-    setInterval(function() {
-
-        if(seconds == 0){
-            minutes = minutes-1;
-            seconds = 59;
-            if(minutes == -1){
-                reaperaudio.play();
-                minutes = 59;
-                seconds = 59;
-            }
-            seconds = 59;
-        }
-        else{
-            seconds = seconds-1;
-        }
-        
-      // Output the result in an element with id="demo"
-      document.getElementById("DReaper").innerHTML = minutes + "m " + seconds + "s ";
-    }, 1000);
 }
 
 
