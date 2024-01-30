@@ -10,6 +10,8 @@ const timem = document.getElementById("timem");
 const timed = document.getElementById("timed");
 const timec = document.getElementById("timec");
 const checkc = document.getElementById("checkc");
+const timet = document.getElementById("timet");
+const checkt = document.getElementById("checkt");
 
 
 const myWorker = new Worker("./worker.js");
@@ -21,6 +23,10 @@ minatoaudio.load();
 
 chaveiroaudio.src = "https://www.myinstants.com/media/sounds/tuturu-okarin.mp3"
 chaveiroaudio.load();
+
+chaveirotaudio.src = "https://www.myinstants.com/media/sounds/the-ramones-blitzkrieg-bop2.mp3"
+chaveirotaudio.load();
+
 
 myWorker.onmessage = (e) => {
     e = e.data
@@ -42,6 +48,14 @@ myWorker.onmessage = (e) => {
     }
     if(e.Run == "Chaveiro"){
         document.getElementById("Chaveiro").innerHTML = e.msg
+        console.log(e.msg);
+        if(e.msg == "0m 0s"){
+
+            chaveiroaudio.play();
+        }
+    }
+    if(e.Run == "ChaveiroTopo"){
+        document.getElementById("Chaveirot").innerHTML = e.msg
         console.log(e.msg);
         if(e.msg == "0m 0s"){
 
@@ -70,6 +84,13 @@ checkc.onclick = () => {
     document.getElementById("dtimec").style.display = 'none'
     document.getElementById("countc").style.display = ''
     myWorker.postMessage({Run:"Chaveiro",Tempo:timec.value.split("m").join("")});
+
+}
+
+checkt.onclick = () => {
+    document.getElementById("dtimet").style.display = 'none'
+    document.getElementById("countt").style.display = ''
+    myWorker.postMessage({Run:"ChaveiroTopo",Tempo:timet.value.split("m").join("")});
 
 }
 
