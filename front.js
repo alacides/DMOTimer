@@ -40,7 +40,7 @@ myWorker.onmessage = (e) => {
 checkminato.onclick = () => {
         document.getElementById("dtimem").style.display = 'none'
         document.getElementById("countm").style.display = ''
-        myWorker.postMessage({Run:"DReaper",Tempo:timem.value.split("h")});
+        myWorker.postMessage({Run:"Minato",Tempo:timem.value.split("h")});
 
 }
 
