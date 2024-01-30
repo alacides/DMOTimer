@@ -2,7 +2,7 @@ onmessage = (e) => {
     console.log(e)
     e = e.data;
     if(e.Run == "DReaper"){
-        vetord = timed.value.split("m").join("")
+        vetord = e.Tempo
     console.log(vetord)
     let minutes = vetord;
     let seconds = 1;
