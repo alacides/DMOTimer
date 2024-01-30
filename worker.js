@@ -1,5 +1,6 @@
 onmessage = (e) => {
     console.log(e)
+    e = e.data;
     if(e.Run == "DReaper"){
         vetord = timed.value.split("m").join("")
     console.log(vetord)
@@ -21,8 +22,8 @@ onmessage = (e) => {
         else{
             seconds = seconds-1;
         }
-        postMessage({Run:"DReaper",msg:minutes + "m " + seconds + "s "});
-      //document.getElementById("DReaper").innerHTML = minutes + "m " + seconds + "s ";
+        //postMessage({Run:"DReaper",msg:minutes + "m " + seconds + "s "});
+      document.getElementById("DReaper").innerHTML = minutes + "m " + seconds + "s ";
     }, 1000);
     } 
 
