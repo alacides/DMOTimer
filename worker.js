@@ -1,4 +1,5 @@
 onmessage = (e) => {
+    console.log("hhhh")
     if(e.Run == "DReaper"){
         vetord = timed.value.split("m").join("")
     console.log(vetord)
