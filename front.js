@@ -35,7 +35,7 @@ myWorker.onmessage = (e) => {
         reaperaudio.load();
         //console.log(e.msg);
         if(e.msg == "0m 0s"){
-
+            reaperaudio.load();
             reaperaudio.play();
         }
     }
@@ -44,25 +44,25 @@ myWorker.onmessage = (e) => {
         //console.log(e.msg);
         minatoaudio.load();
         if(e.msg == "0h 0m 0s"){
-
+            minatoaudio.load();
             minatoaudio.play();
         }
     }
     if(e.Run == "Chaveiro"){
         document.getElementById("Chaveiro").innerHTML = e.msg
-        chaveiroaudio.load();
+        //chaveiroaudio.load();
         //console.log(e.msg);
         if(e.msg == "0m 0s"){
-
+            chaveiroaudio.load();
             chaveiroaudio.play();
         }
     }
     if(e.Run == "ChaveiroTopo"){
         document.getElementById("Chaveirot").innerHTML = e.msg
         //console.log(e.msg);
-        chaveirotaudio.load();
+        
         if(e.msg == "0m 0s"){
-
+            chaveirotaudio.load();
             chaveirotaudio.play();
         }
     }
