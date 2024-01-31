@@ -32,7 +32,7 @@ myWorker.onmessage = (e) => {
     e = e.data
     if(e.Run == "DReaper"){
         document.getElementById("DReaper").innerHTML = e.msg
-        reaperaudio.load();
+        //reaperaudio.load();
         //console.log(e.msg);
         if(e.msg == "0m 0s"){
             reaperaudio.load();
@@ -42,7 +42,7 @@ myWorker.onmessage = (e) => {
     if(e.Run == "Minato"){
         document.getElementById("Minato").innerHTML = e.msg
         //console.log(e.msg);
-        minatoaudio.load();
+        //minatoaudio.load();
         if(e.msg == "0h 0m 0s"){
             minatoaudio.load();
             minatoaudio.play();
