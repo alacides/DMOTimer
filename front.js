@@ -12,6 +12,8 @@ const timec = document.getElementById("timec");
 const checkc = document.getElementById("checkc");
 const timet = document.getElementById("timet");
 const checkt = document.getElementById("checkt");
+const checks = document.getElementById("checks");
+const times = document.getElementById("times");
 const chaveirotaudio = document.getElementById("chaveirot_audio");
 
 const myWorker = new Worker("./worker.js");
@@ -46,6 +48,15 @@ myWorker.onmessage = (e) => {
         if(e.msg == "0h 0m 0s"){
             minatoaudio.load();
             minatoaudio.play();
+        }
+    }
+    if(e.Run == "Shibuya"){
+        document.getElementById("Shibuya").innerHTML = e.msg
+        //console.log(e.msg);
+        //minatoaudio.load();
+        if(e.msg == "0h 0m 0s"){
+            chaveirotaudio.load();
+            chaveirotaudio.play();
         }
     }
     if(e.Run == "Chaveiro"){
@@ -98,3 +109,9 @@ checkt.onclick = () => {
 
 }
 
+checks.onclick = () => {
+    document.getElementById("dtimes").style.display = 'none'
+    document.getElementById("counts").style.display = ''
+    myWorker.postMessage({Run:"Shibuya",Tempo:timem.value.split("h")});
+
+}
