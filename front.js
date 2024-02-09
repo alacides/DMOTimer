@@ -112,6 +112,6 @@ checkt.onclick = () => {
 checks.onclick = () => {
     document.getElementById("dtimes").style.display = 'none'
     document.getElementById("counts").style.display = ''
-    myWorker.postMessage({Run:"Shibuya",Tempo:timem.value.split("h")});
+    myWorker.postMessage({Run:"Shibuya",Tempo:times.value.split("h")});
 
 }
